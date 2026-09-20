@@ -22,9 +22,11 @@ Exit codes are 0 for a complete scan, 1 for a fatal error, and 2 for a partial
 scan. The default worker count is the available parallelism capped at 8;
 `--threads 1` provides a serial-worker comparison. Ctrl-C terminates the process.
 
-The scanner uses `dua-core` for parallel, directory-relative metadata collection.
+The scanner distributes directories across workers and uses Linux `getdents64` /
+`fstatat` for directory-relative metadata collection. Names share a byte arena.
 It stores entry names and parent IDs rather than full paths, and aggregates
-through directory dependency counts without a global path sort. Only duplicate
+through directory dependency counts without a global path sort. A single flat
+directory is scanned by one worker, as in the compared ncdu version. Only duplicate
 hard links require path reconstruction. TUI browsing, sampling, bound-based
 search, and deletion are not implemented yet.
 
@@ -55,6 +57,7 @@ of allocated storage). It reuses completed fixtures, compares totals, and runs
 five warm-cache measurements per tool and thread count. It does not drop caches
 or modify the optional real project. A real project must remain unchanged.
 
-See the [parent-ID implementation report](docs/design/parent-ids.md),
+See the [directory-batch performance report](docs/design/directory-batches.md),
+[parent-ID checkpoint](docs/design/parent-ids.md),
 [frozen baseline report](docs/design/baseline.md), and
 [OKF design bundle](docs/design/index.md).

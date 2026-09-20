@@ -7,6 +7,8 @@ tags: [implementation, performance, parent-ids]
 ---
 # Change
 
+This report describes checkpoint `00bfe90`. The [directory-batch scanner](/directory-batches.md) supersedes it; measurements below remain historical.
+
 Replace the `ignore` scanner with pinned `dua-core` 4.1.0 and raise the minimum Rust version to 1.88.
 Store each entry's name, sizes, directory flag, and parent ID instead of a full path and optional hard-link identity on every node.
 Use collected metadata directly; on Linux the walker obtains it through directory entries rather than resolving full paths for each file.

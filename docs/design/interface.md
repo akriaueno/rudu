@@ -7,7 +7,7 @@ tags: [cli, tui, scope]
 ---
 # Implementation status
 
-The [current scanner](/parent-ids.md) implements the non-interactive exact CLI with `--threads`, `-x`, `--scan-only`, `--list`, and `--apparent-size`.
+The [current scanner](/directory-batches.md) implements the non-interactive exact CLI with `--threads`, `-x`, `--scan-only`, `--list`, and `--apparent-size`.
 The interactive interface and `--estimate` described below remain proposals.
 
 # Scope

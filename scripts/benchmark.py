@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import platform
@@ -83,6 +84,22 @@ def verify(rudu, ncdu, root, scratch, export):
     return {'rudu': result, 'reference': expected}
 
 
+def compare_paired(rudu, ncdu):
+    """Bootstrap paired round log ratios; CI is per comparison, not simultaneous."""
+    if len(rudu) != len(ncdu) or len(rudu) < 2:
+        raise ValueError('At least two paired rounds are required')
+    ratios = [math.log(a['seconds'] / b['seconds']) for a, b in zip(rudu, ncdu)]
+    rng = random.Random(20260921)
+    samples = sorted(math.exp(statistics.mean(rng.choices(ratios, k=len(ratios))))
+                     for _ in range(10_000))
+    lower, upper = samples[249], samples[9749]
+    return dict(paired_rounds=len(ratios), geometric_mean_ratio=math.exp(statistics.mean(ratios)),
+                bootstrap_95_percent_ci=[lower, upper], practical_slowdown_margin=1.05,
+                within_five_percent_slowdown=upper < 1.05,
+                equivalent_within_five_percent=lower > 0.95 and upper < 1.05,
+                faster_at_95_percent=upper < 1.0)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--ncdu', type=Path, required=True)
@@ -92,17 +109,26 @@ def main():
     parser.add_argument('--output', type=Path, default=Path('docs/benchmarks/latest.json'))
     parser.add_argument('--real', type=Path, help='Optional existing tree; scanned read-only')
     parser.add_argument('--runs', type=int, default=5)
+    parser.add_argument('--threads', type=int, nargs='+', default=[1, 4, 8])
+    parser.add_argument('--case', choices=['spread-100k', 'wide-100k', 'spread-1m', 'real'],
+                        help='Run only this dataset')
     args = parser.parse_args()
+    if any(n < 1 for n in args.threads) or len(set(args.threads)) != len(args.threads):
+        parser.error('--threads requires distinct positive integers')
     if args.runs < 1:
         parser.error('--runs must be positive')
     rudu, ncdu = args.rudu.resolve(), args.ncdu.resolve()
     base = args.data_root.resolve()
     base.mkdir(parents=True, exist_ok=True)
-    cases = [(fixture(base, 'spread-100k', 100_000, 100), True),
-             (fixture(base, 'wide-100k', 100_000, 100_000), True),
-             (fixture(base, 'spread-1m', 1_000_000, 1000), True)]
-    if args.real:
+    cases = [(fixture(base, name, count, width), True)
+             for name, count, width in [('spread-100k', 100_000, 100),
+                                        ('wide-100k', 100_000, 100_000),
+                                        ('spread-1m', 1_000_000, 1000)]
+             if args.case is None or args.case == name]
+    if args.real and args.case in [None, 'real']:
         cases.append((args.real.resolve(), False))
+    if not cases:
+        parser.error('--case real requires --real PATH')
     report = {
         'timestamp_utc': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
         'platform': platform.platform(), 'cpu_count': os.cpu_count(),
@@ -132,7 +158,7 @@ def main():
             print(f'Checking {root.name}', flush=True)
             verified = verify(rudu, ncdu, root, scratch, synthetic)
             configs = []
-            for threads in [1, 4, 8]:
+            for threads in args.threads:
                 configs.extend([
                     ('rudu', threads, [str(rudu), str(root), '--threads', str(threads), '--scan-only']),
                     ('ncdu', threads, [str(ncdu), '--ignore-config', '-0', '--quit-after-scan', '-t', str(threads), str(root)]),
@@ -142,7 +168,7 @@ def main():
                 if totals(baseline, root) != verified['rudu']:
                     raise RuntimeError(f'Baseline totals differ: {root}')
                 configs.extend(('baseline', n, [str(baseline), str(root), '--threads', str(n), '--scan-only'])
-                               for n in [1, 4, 8])
+                               for n in args.threads)
             measurements = {(tool, threads): [] for tool, threads, _ in configs}
             for _, _, command in configs:
                 subprocess.run(command, stdout=subprocess.DEVNULL, check=True)
@@ -170,6 +196,9 @@ def main():
                 case['results'].append(dict(tool=tool, threads=threads, command=command, runs=runs,
                     median_seconds=statistics.median(times), min_seconds=min(times), max_seconds=max(times),
                     median_peak_rss_kib=statistics.median(r['peak_rss_kib'] for r in runs)))
+            if args.runs >= 2:
+                case['paired_comparisons'] = [dict(threads=n, **compare_paired(measurements['rudu', n], measurements['ncdu', n]))
+                                              for n in args.threads]
             report['cases'].append(case)
             args.output.parent.mkdir(parents=True, exist_ok=True)
             args.output.write_text(json.dumps(report, indent=2) + '\n')

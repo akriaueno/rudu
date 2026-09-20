@@ -7,13 +7,14 @@ tags: [parallelism, filesystem, accounting]
 ---
 # Implementation status
 
-The [parent-ID implementation](/parent-ids.md) replaces the naive scanner.
-It uses pinned `dua-core` 4.1.0 with completion-order results, directory-relative metadata, compact per-entry names, and direct directory-ID lookup.
-Children may arrive before parents. Finalization resolves their integer IDs and uses pending child-directory counts for bottom-up aggregation.
-There is no global path sort, parent-path hash map, or application-level per-entry collection lock.
+The [directory-batch implementation](/directory-batches.md) supersedes the [parent-ID checkpoint](/parent-ids.md).
+It distributes directories through a shared work queue, uses Linux `getdents64` and `fstatat`, and stores names in a contiguous byte arena.
+Workers merge groups of completed directories after at least 256 entries while peers continue scanning; remaining entries flush at worker completion.
+Children may arrive before parents. Finalization resolves integer IDs and uses pending child-directory counts for bottom-up aggregation.
+There is no global path sort, parent-path hash map, or per-entry collection lock.
 
 The original implementation is preserved in `benchmarks/baseline/`.
-UI integration and a contiguous name arena below remain proposals; current names use `OsString`.
+UI integration remains proposed.
 
 # Scope and performance assumptions
 
@@ -26,24 +27,22 @@ These are design concerns, not measured findings.
 
 # Scanner selection
 
-Use `dua-core` 4.1.0, requiring Rust 1.88 or newer.
-Its API provides work-stealing traversal, metadata batches, and parent directory IDs.
-The previous `ignore` scanner remains only in the frozen baseline.
-
-Include hidden and gitignored entries, and never follow symbolic links.
+Use a small standard-library queue and condition variable with the `libc` bindings for Linux filesystem calls.
+The earlier `dua-core` scanner is preserved in commit `00bfe90`; `ignore` remains in the frozen baseline.
+Include hidden and gitignored entries and count symbolic links without following them.
 Reuse collected metadata for sizes and link identity instead of requesting it again.
-Bound workers with `--threads`; choose the default from measurements at counts such as 1, 2, 4, and 8 rather than CPU count alone.
+Bound workers with `--threads`; the current default is available parallelism capped at eight.
 
-Require parallel metadata collection within a single large directory, not only parallelism between directories.
-Record any remaining serial enumeration limit.
-Do not introduce a custom scheduler or async runtime in the initial implementation.
+The ncdu-inspired implementation parallelizes between directories, with serial enumeration and metadata collection inside each directory.
+This revises the previous within-directory parallelism requirement: the simpler scheduler targets ncdu parity but gives up the checkpoint's flat-directory advantage.
+Reintroduce bounded within-directory stat batches if flat-directory speed becomes the next objective.
 
 # Data flow
 
 ```text
 Parallel enumeration and metadata collection
-  -> Library result stream
-  -> Tree owned by a dedicated aggregation thread
+  -> Directory batches merged into shared node and name arrays
+  -> Final dependency-based aggregation
   -> Visible-directory view data
   -> UI thread
 ```
@@ -54,22 +53,19 @@ Coalesce progress updates so slow rendering does not stop scanning.
 Start with a maximum of ten screen updates per second, avoiding formatting and rendering per entry.
 Directory totals remain provisional during scanning; retain the last available value when updating it is expensive.
 
-Inspect library-internal job and result queues as well as application buffers when testing memory bounds.
-An application-level bounded channel does not prove the whole pipeline has bounded buffering.
-Notify the aggregation thread on cancellation and stop workers by dropping the traversal iterator.
+The directory job queue and retained tree are not bounded independently of input size.
+The current headless CLI uses default SIGINT process termination; cooperative UI cancellation remains proposed.
 Do not promise immediate cancellation of an OS filesystem call that is blocked.
 
 # Tree and aggregation
 
-Use `Order::Completion`.
-In this library version on Linux, `Order::ParentFirst` collects a whole directory serially, causing a measured wide-directory regression.
-Retain the emitted parent directory ID with each node and map directory IDs to node indices when directory entries arrive.
+Assign directory IDs when directory metadata is collected and map them to node indices when a worker merges its batch.
 Resolve these integer references after traversal; no path lookup or placeholder tree nodes are needed.
 
 Store names in a contiguous byte arena and keep offsets and lengths in nodes.
 Keep parent IDs, types, sizes, and state in a node array; only directories need child lists.
 This avoids persistent per-name allocations and per-file child-list storage.
-Detect ID and name-arena capacity overflow.
+Use native-width IDs and offsets; size accounting uses checked arithmetic. Allocation failure remains fatal.
 Preserve non-UTF-8 bytes and reconstruct paths only when operations or error displays need them.
 
 Register each entry's own size, add regular entries to their parents, then process directories with no pending child directories.

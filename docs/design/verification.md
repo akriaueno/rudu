@@ -36,7 +36,8 @@ Check navigation, metric switching, input during scanning, partial-result report
 
 # Exact-mode performance targets
 
-The naive baseline and parent-ID scanner are implemented and measured separately. High performance remains a target for subsequent iterations.
+The naive baseline, parent-ID checkpoint, and directory-batch scanner are measured separately. The current iteration evaluates ncdu parity before the twofold stretch target.
+Use paired round log ratios with 10,000 bootstrap resamples and a per-comparison 95% interval. A 5% slowdown margin is an engineering acceptance proposal, not a user-specified statistical threshold. Absence of a detected difference alone does not establish equivalence.
 The primary target is approximately twice the speed of parallel ncdu.
 On a predefined set of large local-SSD trees, target a geometric mean of per-case median elapsed-time ratios `rudu / ncdu` no greater than 0.5.
 Against dua, initially target parity or better, with 0.8 as a stretch target.

@@ -6,4 +6,4 @@ rust-version = "1.88"
 description = "A parallel disk-usage scanner"
 
 [dependencies]
-dua-core = "=4.1.0"
+libc = "0.2"

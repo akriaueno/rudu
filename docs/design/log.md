@@ -2,6 +2,8 @@
 
 ## 2026-09-21
 
+- **Directory batches**: Adopt ncdu-inspired directory scheduling, FD-relative libc metadata calls, and arena-backed names. Merge results during scanning and compare ncdu with paired confidence intervals. Record the flat-directory regression from the previous checkpoint.
+
 - **Parent-ID implementation**: Replace full-path sorting and parent-path lookup with direct IDs and dependency-based aggregation. Use completion-order traversal to retain parallel metadata collection in wide directories. Freeze the naive source and benchmark it alongside the new scanner and ncdu.
 
 - **Performance analysis**: Measure scan phases, isolate collection and path-storage changes, compare metadata APIs, and inspect syscall counts and ncdu source. Preserve the original implementation and binary.
