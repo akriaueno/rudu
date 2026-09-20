@@ -1,0 +1,1815 @@
+{
+  "timestamp_utc": "2026-09-20T16:43:26Z",
+  "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+  "cpu_count": 12,
+  "cpu": "{\n   \"lscpu\": [\n      {\n         \"field\": \"Architecture:\",\n         \"data\": \"x86_64\"\n      },{\n         \"field\": \"CPU op-mode(s):\",\n         \"data\": \"32-bit, 64-bit\"\n      },{\n         \"field\": \"Address sizes:\",\n         \"data\": \"48 bits physical, 48 bits virtual\"\n      },{\n         \"field\": \"Byte Order:\",\n         \"data\": \"Little Endian\"\n      },{\n         \"field\": \"CPU(s):\",\n         \"data\": \"12\"\n      },{\n         \"field\": \"On-line CPU(s) list:\",\n         \"data\": \"0-11\"\n      },{\n         \"field\": \"Vendor ID:\",\n         \"data\": \"AuthenticAMD\"\n      },{\n         \"field\": \"Model name:\",\n         \"data\": \"AMD Ryzen 5 7600 6-Core Processor\"\n      },{\n         \"field\": \"CPU family:\",\n         \"data\": \"25\"\n      },{\n         \"field\": \"Model:\",\n         \"data\": \"97\"\n      },{\n         \"field\": \"Thread(s) per core:\",\n         \"data\": \"2\"\n      },{\n         \"field\": \"Core(s) per socket:\",\n         \"data\": \"6\"\n      },{\n         \"field\": \"Socket(s):\",\n         \"data\": \"1\"\n      },{\n         \"field\": \"Stepping:\",\n         \"data\": \"2\"\n      },{\n         \"field\": \"Frequency boost:\",\n         \"data\": \"enabled\"\n      },{\n         \"field\": \"CPU(s) scaling MHz:\",\n         \"data\": \"84%\"\n      },{\n         \"field\": \"CPU max MHz:\",\n         \"data\": \"5171.8530\"\n      },{\n         \"field\": \"CPU min MHz:\",\n         \"data\": \"405.0250\"\n      },{\n         \"field\": \"BogoMIPS:\",\n         \"data\": \"7585.39\"\n      },{\n         \"field\": \"Flags:\",\n         \"data\": \"fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpuid_fault cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid overflow_recov succor smca fsrm flush_l1d amd_lbr_pmc_freeze\"\n      },{\n         \"field\": \"Virtualization:\",\n         \"data\": \"AMD-V\"\n      },{\n         \"field\": \"L1d cache:\",\n         \"data\": \"192 KiB (6 instances)\"\n      },{\n         \"field\": \"L1i cache:\",\n         \"data\": \"192 KiB (6 instances)\"\n      },{\n         \"field\": \"L2 cache:\",\n         \"data\": \"6 MiB (6 instances)\"\n      },{\n         \"field\": \"L3 cache:\",\n         \"data\": \"32 MiB (1 instance)\"\n      },{\n         \"field\": \"NUMA node(s):\",\n         \"data\": \"1\"\n      },{\n         \"field\": \"NUMA node0 CPU(s):\",\n         \"data\": \"0-11\"\n      },{\n         \"field\": \"Vulnerability Gather data sampling:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Ghostwrite:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Indirect target selection:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Itlb multihit:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability L1tf:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Mds:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Meltdown:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Mmio stale data:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Old microcode:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Reg file data sampling:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Retbleed:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Spec rstack overflow:\",\n         \"data\": \"Mitigation; Safe RET\"\n      },{\n         \"field\": \"Vulnerability Spec store bypass:\",\n         \"data\": \"Mitigation; Speculative Store Bypass disabled via prctl\"\n      },{\n         \"field\": \"Vulnerability Spectre v1:\",\n         \"data\": \"Mitigation; usercopy/swapgs barriers and __user pointer sanitization\"\n      },{\n         \"field\": \"Vulnerability Spectre v2:\",\n         \"data\": \"Mitigation; Enhanced / Automatic IBRS; IBPB conditional; STIBP always-on; PBRSB-eIBRS Not affected; BHI Not affected\"\n      },{\n         \"field\": \"Vulnerability Srbds:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Tsa:\",\n         \"data\": \"Mitigation; Clear CPU buffers\"\n      },{\n         \"field\": \"Vulnerability Tsx async abort:\",\n         \"data\": \"Not affected\"\n      },{\n         \"field\": \"Vulnerability Vmscape:\",\n         \"data\": \"Mitigation; IBPB before exit to userspace\"\n      }\n   ]\n}",
+  "storage": "SOURCE         FSTYPE TARGET\n/dev/nvme2n1p1 ext4   /home",
+  "devices": "NAME    MODEL                   ROTA\nloop0                              0\nloop1                              0\nloop2                              0\nloop3                              0\nloop4                              0\nloop5                              0\nloop6                              0\nloop7                              0\nloop8                              0\nloop9                              0\nloop10                             0\nloop11                             0\nloop12                             0\nloop13                             0\nloop14                             0\nloop15                             0\nloop16                             0\nloop17                             0\nloop18                             0\nloop19                             0\nloop20                             0\nloop21                             0\nloop22                             0\nloop23                             0\nloop25                             0\nloop26                             0\nloop27                             0\nloop28                             0\nloop29                             0\nloop30                             0\nnvme2n1 Samsung SSD 990 PRO 4TB    0\nnvme1n1 WDC WDS100T2B0C-00PXH0     0\nnvme0n1 CT2000T500SSD8             0",
+  "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)",
+  "rudu": "rudu 0.1.0",
+  "ncdu": "ncdu 2.9.1",
+  "rudu_sha256": "8b735dc0cbc6394fc90b97e12fef6a35f171e78b17fca0982dc620250306255f",
+  "ncdu_sha256": "7b3cb63976e4d678c286f2d3e968cf3f348d216d2dc155ecd9d7719a41f83dcd",
+  "source_sha256": "f285cab4f3c19fd67204a2bce7bbd93d798928350e23fe55dc3509ba181a2c31",
+  "cargo_lock_sha256": "4443b901cf00654cddbf197cca405ee10fba58c5897f28163bc7639a44fb55a6",
+  "build": "cargo build --release (default profile)",
+  "cache": "warm: verification plus one warm-up per configuration; no cache drops",
+  "runs": 5,
+  "order_seed": 20260921,
+  "scope": "process launch through full scan, accounting, and process teardown; tree retained by both tools",
+  "cases": [
+    {
+      "path": "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-100k",
+      "synthetic": true,
+      "verification": {
+        "rudu": {
+          "allocated_bytes": 413724672,
+          "apparent_bytes": 16920576,
+          "entries": 101001,
+          "errors": 0
+        },
+        "reference": {
+          "allocated_bytes": 413724672,
+          "apparent_bytes": 16920576,
+          "ncdu_export_matches": true
+        }
+      },
+      "results": [
+        {
+          "tool": "rudu",
+          "threads": 1,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-100k",
+            "--threads",
+            "1",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.16149685403797776,
+              "peak_rss_kib": 10500,
+              "user_seconds": 0.05,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.1601215599803254,
+              "peak_rss_kib": 10492,
+              "user_seconds": 0.03,
+              "system_seconds": 0.13
+            },
+            {
+              "seconds": 0.15939183288719505,
+              "peak_rss_kib": 10880,
+              "user_seconds": 0.03,
+              "system_seconds": 0.13
+            },
+            {
+              "seconds": 0.16000544803682715,
+              "peak_rss_kib": 10744,
+              "user_seconds": 0.04,
+              "system_seconds": 0.12
+            },
+            {
+              "seconds": 0.1610168090555817,
+              "peak_rss_kib": 10716,
+              "user_seconds": 0.03,
+              "system_seconds": 0.13
+            }
+          ],
+          "median_seconds": 0.1601215599803254,
+          "min_seconds": 0.15939183288719505,
+          "max_seconds": 0.16149685403797776,
+          "median_peak_rss_kib": 10716
+        },
+        {
+          "tool": "ncdu",
+          "threads": 1,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+            "--ignore-config",
+            "-0",
+            "--quit-after-scan",
+            "-t",
+            "1",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-100k"
+          ],
+          "runs": [
+            {
+              "seconds": 0.14670518704224378,
+              "peak_rss_kib": 3744,
+              "user_seconds": 0.03,
+              "system_seconds": 0.1
+            },
+            {
+              "seconds": 0.14288579998537898,
+              "peak_rss_kib": 3872,
+              "user_seconds": 0.02,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.1444608790334314,
+              "peak_rss_kib": 3744,
+              "user_seconds": 0.02,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.14881617296487093,
+              "peak_rss_kib": 3744,
+              "user_seconds": 0.03,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.1438765499042347,
+              "peak_rss_kib": 3872,
+              "user_seconds": 0.02,
+              "system_seconds": 0.11
+            }
+          ],
+          "median_seconds": 0.1444608790334314,
+          "min_seconds": 0.14288579998537898,
+          "max_seconds": 0.14881617296487093,
+          "median_peak_rss_kib": 3744
+        },
+        {
+          "tool": "rudu",
+          "threads": 4,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-100k",
+            "--threads",
+            "4",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.051410197047516704,
+              "peak_rss_kib": 10488,
+              "user_seconds": 0.05,
+              "system_seconds": 0.13
+            },
+            {
+              "seconds": 0.04696092498488724,
+              "peak_rss_kib": 10844,
+              "user_seconds": 0.04,
+              "system_seconds": 0.12
+            },
+            {
+              "seconds": 0.04731317900586873,
+              "peak_rss_kib": 10640,
+              "user_seconds": 0.05,
+              "system_seconds": 0.12
+            },
+            {
+              "seconds": 0.04766291903797537,
+              "peak_rss_kib": 10488,
+              "user_seconds": 0.05,
+              "system_seconds": 0.12
+            },
+            {
+              "seconds": 0.04794979898724705,
+              "peak_rss_kib": 10756,
+              "user_seconds": 0.03,
+              "system_seconds": 0.13
+            }
+          ],
+          "median_seconds": 0.04766291903797537,
+          "min_seconds": 0.04696092498488724,
+          "max_seconds": 0.051410197047516704,
+          "median_peak_rss_kib": 10640
+        },
+        {
+          "tool": "ncdu",
+          "threads": 4,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+            "--ignore-config",
+            "-0",
+            "--quit-after-scan",
+            "-t",
+            "4",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-100k"
+          ],
+          "runs": [
+            {
+              "seconds": 0.04075494594871998,
+              "peak_rss_kib": 3616,
+              "user_seconds": 0.02,
+              "system_seconds": 0.12
+            },
+            {
+              "seconds": 0.038555872975848615,
+              "peak_rss_kib": 3616,
+              "user_seconds": 0.02,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.03930783399846405,
+              "peak_rss_kib": 3616,
+              "user_seconds": 0.03,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.04494135605636984,
+              "peak_rss_kib": 3616,
+              "user_seconds": 0.02,
+              "system_seconds": 0.14
+            },
+            {
+              "seconds": 0.03986466990318149,
+              "peak_rss_kib": 3744,
+              "user_seconds": 0.03,
+              "system_seconds": 0.11
+            }
+          ],
+          "median_seconds": 0.03986466990318149,
+          "min_seconds": 0.038555872975848615,
+          "max_seconds": 0.04494135605636984,
+          "median_peak_rss_kib": 3616
+        },
+        {
+          "tool": "rudu",
+          "threads": 8,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-100k",
+            "--threads",
+            "8",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.031175954034551978,
+              "peak_rss_kib": 10948,
+              "user_seconds": 0.05,
+              "system_seconds": 0.15
+            },
+            {
+              "seconds": 0.03132571198511869,
+              "peak_rss_kib": 11060,
+              "user_seconds": 0.06,
+              "system_seconds": 0.15
+            },
+            {
+              "seconds": 0.032459584064781666,
+              "peak_rss_kib": 10816,
+              "user_seconds": 0.04,
+              "system_seconds": 0.16
+            },
+            {
+              "seconds": 0.028963155928067863,
+              "peak_rss_kib": 10848,
+              "user_seconds": 0.05,
+              "system_seconds": 0.14
+            },
+            {
+              "seconds": 0.031959446030668914,
+              "peak_rss_kib": 10712,
+              "user_seconds": 0.05,
+              "system_seconds": 0.15
+            }
+          ],
+          "median_seconds": 0.03132571198511869,
+          "min_seconds": 0.028963155928067863,
+          "max_seconds": 0.032459584064781666,
+          "median_peak_rss_kib": 10848
+        },
+        {
+          "tool": "ncdu",
+          "threads": 8,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+            "--ignore-config",
+            "-0",
+            "--quit-after-scan",
+            "-t",
+            "8",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-100k"
+          ],
+          "runs": [
+            {
+              "seconds": 0.027710034977644682,
+              "peak_rss_kib": 3872,
+              "user_seconds": 0.03,
+              "system_seconds": 0.15
+            },
+            {
+              "seconds": 0.02423438592813909,
+              "peak_rss_kib": 3488,
+              "user_seconds": 0.03,
+              "system_seconds": 0.14
+            },
+            {
+              "seconds": 0.023492925916798413,
+              "peak_rss_kib": 3360,
+              "user_seconds": 0.03,
+              "system_seconds": 0.13
+            },
+            {
+              "seconds": 0.02557598694693297,
+              "peak_rss_kib": 3232,
+              "user_seconds": 0.04,
+              "system_seconds": 0.13
+            },
+            {
+              "seconds": 0.023473670007660985,
+              "peak_rss_kib": 3360,
+              "user_seconds": 0.03,
+              "system_seconds": 0.14
+            }
+          ],
+          "median_seconds": 0.02423438592813909,
+          "min_seconds": 0.023473670007660985,
+          "max_seconds": 0.027710034977644682,
+          "median_peak_rss_kib": 3360
+        },
+        {
+          "tool": "baseline",
+          "threads": 1,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/baseline/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-100k",
+            "--threads",
+            "1",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.25056934205349535,
+              "peak_rss_kib": 24464,
+              "user_seconds": 0.07,
+              "system_seconds": 0.17
+            },
+            {
+              "seconds": 0.25372779509052634,
+              "peak_rss_kib": 24704,
+              "user_seconds": 0.08,
+              "system_seconds": 0.16
+            },
+            {
+              "seconds": 0.25338096101768315,
+              "peak_rss_kib": 24532,
+              "user_seconds": 0.07,
+              "system_seconds": 0.17
+            },
+            {
+              "seconds": 0.2528508669929579,
+              "peak_rss_kib": 24592,
+              "user_seconds": 0.08,
+              "system_seconds": 0.16
+            },
+            {
+              "seconds": 0.2515726489946246,
+              "peak_rss_kib": 24644,
+              "user_seconds": 0.07,
+              "system_seconds": 0.17
+            }
+          ],
+          "median_seconds": 0.2528508669929579,
+          "min_seconds": 0.25056934205349535,
+          "max_seconds": 0.25372779509052634,
+          "median_peak_rss_kib": 24592
+        },
+        {
+          "tool": "baseline",
+          "threads": 4,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/baseline/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-100k",
+            "--threads",
+            "4",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.10043407394550741,
+              "peak_rss_kib": 27028,
+              "user_seconds": 0.11,
+              "system_seconds": 0.17
+            },
+            {
+              "seconds": 0.10568900208454579,
+              "peak_rss_kib": 27080,
+              "user_seconds": 0.09,
+              "system_seconds": 0.2
+            },
+            {
+              "seconds": 0.09689891210291535,
+              "peak_rss_kib": 27176,
+              "user_seconds": 0.08,
+              "system_seconds": 0.19
+            },
+            {
+              "seconds": 0.0962897869758308,
+              "peak_rss_kib": 27412,
+              "user_seconds": 0.09,
+              "system_seconds": 0.18
+            },
+            {
+              "seconds": 0.09489195898640901,
+              "peak_rss_kib": 27156,
+              "user_seconds": 0.11,
+              "system_seconds": 0.16
+            }
+          ],
+          "median_seconds": 0.09689891210291535,
+          "min_seconds": 0.09489195898640901,
+          "max_seconds": 0.10568900208454579,
+          "median_peak_rss_kib": 27156
+        },
+        {
+          "tool": "baseline",
+          "threads": 8,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/baseline/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-100k",
+            "--threads",
+            "8",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.08680706901941448,
+              "peak_rss_kib": 27728,
+              "user_seconds": 0.14,
+              "system_seconds": 0.22
+            },
+            {
+              "seconds": 0.08533452695701271,
+              "peak_rss_kib": 27924,
+              "user_seconds": 0.12,
+              "system_seconds": 0.24
+            },
+            {
+              "seconds": 0.07759297790471464,
+              "peak_rss_kib": 27796,
+              "user_seconds": 0.09,
+              "system_seconds": 0.24
+            },
+            {
+              "seconds": 0.0767227920005098,
+              "peak_rss_kib": 27796,
+              "user_seconds": 0.12,
+              "system_seconds": 0.22
+            },
+            {
+              "seconds": 0.07440625398885459,
+              "peak_rss_kib": 28028,
+              "user_seconds": 0.11,
+              "system_seconds": 0.22
+            }
+          ],
+          "median_seconds": 0.07759297790471464,
+          "min_seconds": 0.07440625398885459,
+          "max_seconds": 0.08680706901941448,
+          "median_peak_rss_kib": 27796
+        }
+      ]
+    },
+    {
+      "path": "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/wide-100k",
+      "synthetic": true,
+      "verification": {
+        "rudu": {
+          "allocated_bytes": 412487680,
+          "apparent_bytes": 15683584,
+          "entries": 100002,
+          "errors": 0
+        },
+        "reference": {
+          "allocated_bytes": 412487680,
+          "apparent_bytes": 15683584,
+          "ncdu_export_matches": true
+        }
+      },
+      "results": [
+        {
+          "tool": "rudu",
+          "threads": 1,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/wide-100k",
+            "--threads",
+            "1",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.18875018204562366,
+              "peak_rss_kib": 52444,
+              "user_seconds": 0.05,
+              "system_seconds": 0.13
+            },
+            {
+              "seconds": 0.18625078606419265,
+              "peak_rss_kib": 52068,
+              "user_seconds": 0.03,
+              "system_seconds": 0.14
+            },
+            {
+              "seconds": 0.1857202600222081,
+              "peak_rss_kib": 52384,
+              "user_seconds": 0.03,
+              "system_seconds": 0.14
+            },
+            {
+              "seconds": 0.19301430601626635,
+              "peak_rss_kib": 52416,
+              "user_seconds": 0.04,
+              "system_seconds": 0.14
+            },
+            {
+              "seconds": 0.18431866692844778,
+              "peak_rss_kib": 52352,
+              "user_seconds": 0.04,
+              "system_seconds": 0.14
+            }
+          ],
+          "median_seconds": 0.18625078606419265,
+          "min_seconds": 0.18431866692844778,
+          "max_seconds": 0.19301430601626635,
+          "median_peak_rss_kib": 52384
+        },
+        {
+          "tool": "ncdu",
+          "threads": 1,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+            "--ignore-config",
+            "-0",
+            "--quit-after-scan",
+            "-t",
+            "1",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/wide-100k"
+          ],
+          "runs": [
+            {
+              "seconds": 0.14534328400623053,
+              "peak_rss_kib": 3744,
+              "user_seconds": 0.02,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.1483992600115016,
+              "peak_rss_kib": 3872,
+              "user_seconds": 0.02,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.14634294202551246,
+              "peak_rss_kib": 3872,
+              "user_seconds": 0.03,
+              "system_seconds": 0.1
+            },
+            {
+              "seconds": 0.14750761294271797,
+              "peak_rss_kib": 3744,
+              "user_seconds": 0.03,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.14509835897479206,
+              "peak_rss_kib": 3744,
+              "user_seconds": 0.02,
+              "system_seconds": 0.11
+            }
+          ],
+          "median_seconds": 0.14634294202551246,
+          "min_seconds": 0.14509835897479206,
+          "max_seconds": 0.1483992600115016,
+          "median_peak_rss_kib": 3744
+        },
+        {
+          "tool": "rudu",
+          "threads": 4,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/wide-100k",
+            "--threads",
+            "4",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.18657366198021919,
+              "peak_rss_kib": 52412,
+              "user_seconds": 0.05,
+              "system_seconds": 0.13
+            },
+            {
+              "seconds": 0.18472824804484844,
+              "peak_rss_kib": 52300,
+              "user_seconds": 0.04,
+              "system_seconds": 0.14
+            },
+            {
+              "seconds": 0.18661156797315925,
+              "peak_rss_kib": 52188,
+              "user_seconds": 0.04,
+              "system_seconds": 0.14
+            },
+            {
+              "seconds": 0.19961924897506833,
+              "peak_rss_kib": 52320,
+              "user_seconds": 0.04,
+              "system_seconds": 0.15
+            },
+            {
+              "seconds": 0.19476231606677175,
+              "peak_rss_kib": 52360,
+              "user_seconds": 0.04,
+              "system_seconds": 0.15
+            }
+          ],
+          "median_seconds": 0.18661156797315925,
+          "min_seconds": 0.18472824804484844,
+          "max_seconds": 0.19961924897506833,
+          "median_peak_rss_kib": 52320
+        },
+        {
+          "tool": "ncdu",
+          "threads": 4,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+            "--ignore-config",
+            "-0",
+            "--quit-after-scan",
+            "-t",
+            "4",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/wide-100k"
+          ],
+          "runs": [
+            {
+              "seconds": 0.16616319003514946,
+              "peak_rss_kib": 3872,
+              "user_seconds": 0.02,
+              "system_seconds": 0.12
+            },
+            {
+              "seconds": 0.15130495803896338,
+              "peak_rss_kib": 3744,
+              "user_seconds": 0.03,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.14629155292641371,
+              "peak_rss_kib": 3744,
+              "user_seconds": 0.02,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.14426241698674858,
+              "peak_rss_kib": 3744,
+              "user_seconds": 0.03,
+              "system_seconds": 0.1
+            },
+            {
+              "seconds": 0.14887900406029075,
+              "peak_rss_kib": 3616,
+              "user_seconds": 0.02,
+              "system_seconds": 0.11
+            }
+          ],
+          "median_seconds": 0.14887900406029075,
+          "min_seconds": 0.14426241698674858,
+          "max_seconds": 0.16616319003514946,
+          "median_peak_rss_kib": 3744
+        },
+        {
+          "tool": "rudu",
+          "threads": 8,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/wide-100k",
+            "--threads",
+            "8",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.18573725991882384,
+              "peak_rss_kib": 52232,
+              "user_seconds": 0.04,
+              "system_seconds": 0.14
+            },
+            {
+              "seconds": 0.1839218829991296,
+              "peak_rss_kib": 52460,
+              "user_seconds": 0.04,
+              "system_seconds": 0.13
+            },
+            {
+              "seconds": 0.1850686320103705,
+              "peak_rss_kib": 52300,
+              "user_seconds": 0.02,
+              "system_seconds": 0.15
+            },
+            {
+              "seconds": 0.1867276510456577,
+              "peak_rss_kib": 52424,
+              "user_seconds": 0.03,
+              "system_seconds": 0.14
+            },
+            {
+              "seconds": 0.18303494900465012,
+              "peak_rss_kib": 52552,
+              "user_seconds": 0.03,
+              "system_seconds": 0.14
+            }
+          ],
+          "median_seconds": 0.1850686320103705,
+          "min_seconds": 0.18303494900465012,
+          "max_seconds": 0.1867276510456577,
+          "median_peak_rss_kib": 52424
+        },
+        {
+          "tool": "ncdu",
+          "threads": 8,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+            "--ignore-config",
+            "-0",
+            "--quit-after-scan",
+            "-t",
+            "8",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/wide-100k"
+          ],
+          "runs": [
+            {
+              "seconds": 0.14360587601549923,
+              "peak_rss_kib": 3744,
+              "user_seconds": 0.02,
+              "system_seconds": 0.12
+            },
+            {
+              "seconds": 0.14239077898673713,
+              "peak_rss_kib": 3872,
+              "user_seconds": 0.02,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.15068158297799528,
+              "peak_rss_kib": 3744,
+              "user_seconds": 0.02,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.14279194991104305,
+              "peak_rss_kib": 3616,
+              "user_seconds": 0.02,
+              "system_seconds": 0.11
+            },
+            {
+              "seconds": 0.14736290706787258,
+              "peak_rss_kib": 3744,
+              "user_seconds": 0.02,
+              "system_seconds": 0.11
+            }
+          ],
+          "median_seconds": 0.14360587601549923,
+          "min_seconds": 0.14239077898673713,
+          "max_seconds": 0.15068158297799528,
+          "median_peak_rss_kib": 3744
+        },
+        {
+          "tool": "baseline",
+          "threads": 1,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/baseline/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/wide-100k",
+            "--threads",
+            "1",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.2973905809922144,
+              "peak_rss_kib": 54704,
+              "user_seconds": 0.1,
+              "system_seconds": 0.18
+            },
+            {
+              "seconds": 0.2882475480437279,
+              "peak_rss_kib": 54672,
+              "user_seconds": 0.1,
+              "system_seconds": 0.17
+            },
+            {
+              "seconds": 0.28986948693636805,
+              "peak_rss_kib": 54988,
+              "user_seconds": 0.09,
+              "system_seconds": 0.18
+            },
+            {
+              "seconds": 0.29649950098246336,
+              "peak_rss_kib": 54992,
+              "user_seconds": 0.1,
+              "system_seconds": 0.18
+            },
+            {
+              "seconds": 0.28490819805301726,
+              "peak_rss_kib": 54900,
+              "user_seconds": 0.09,
+              "system_seconds": 0.19
+            }
+          ],
+          "median_seconds": 0.28986948693636805,
+          "min_seconds": 0.28490819805301726,
+          "max_seconds": 0.2973905809922144,
+          "median_peak_rss_kib": 54900
+        },
+        {
+          "tool": "baseline",
+          "threads": 4,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/baseline/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/wide-100k",
+            "--threads",
+            "4",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.1705877570202574,
+              "peak_rss_kib": 48660,
+              "user_seconds": 0.12,
+              "system_seconds": 0.23
+            },
+            {
+              "seconds": 0.17224362900014967,
+              "peak_rss_kib": 48936,
+              "user_seconds": 0.13,
+              "system_seconds": 0.22
+            },
+            {
+              "seconds": 0.17765381699427962,
+              "peak_rss_kib": 48456,
+              "user_seconds": 0.14,
+              "system_seconds": 0.22
+            },
+            {
+              "seconds": 0.17210709198843688,
+              "peak_rss_kib": 49224,
+              "user_seconds": 0.11,
+              "system_seconds": 0.23
+            },
+            {
+              "seconds": 0.16914019896648824,
+              "peak_rss_kib": 48272,
+              "user_seconds": 0.14,
+              "system_seconds": 0.2
+            }
+          ],
+          "median_seconds": 0.17210709198843688,
+          "min_seconds": 0.16914019896648824,
+          "max_seconds": 0.17765381699427962,
+          "median_peak_rss_kib": 48660
+        },
+        {
+          "tool": "baseline",
+          "threads": 8,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/baseline/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/wide-100k",
+            "--threads",
+            "8",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.1333154619205743,
+              "peak_rss_kib": 38752,
+              "user_seconds": 0.15,
+              "system_seconds": 0.26
+            },
+            {
+              "seconds": 0.12596820702310652,
+              "peak_rss_kib": 37508,
+              "user_seconds": 0.15,
+              "system_seconds": 0.25
+            },
+            {
+              "seconds": 0.1350569089408964,
+              "peak_rss_kib": 38752,
+              "user_seconds": 0.15,
+              "system_seconds": 0.25
+            },
+            {
+              "seconds": 0.1265681179938838,
+              "peak_rss_kib": 38584,
+              "user_seconds": 0.15,
+              "system_seconds": 0.25
+            },
+            {
+              "seconds": 0.12973014800809324,
+              "peak_rss_kib": 38776,
+              "user_seconds": 0.16,
+              "system_seconds": 0.24
+            }
+          ],
+          "median_seconds": 0.12973014800809324,
+          "min_seconds": 0.12596820702310652,
+          "max_seconds": 0.1350569089408964,
+          "median_peak_rss_kib": 38752
+        }
+      ]
+    },
+    {
+      "path": "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+      "synthetic": true,
+      "verification": {
+        "rudu": {
+          "allocated_bytes": 4133191680,
+          "apparent_bytes": 164732928,
+          "entries": 1001001,
+          "errors": 0
+        },
+        "reference": {
+          "allocated_bytes": 4133191680,
+          "apparent_bytes": 164732928,
+          "ncdu_export_matches": true
+        }
+      },
+      "results": [
+        {
+          "tool": "rudu",
+          "threads": 1,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+            "--threads",
+            "1",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 1.4595034200465307,
+              "peak_rss_kib": 80984,
+              "user_seconds": 0.36,
+              "system_seconds": 1.15
+            },
+            {
+              "seconds": 1.514331276062876,
+              "peak_rss_kib": 80728,
+              "user_seconds": 0.37,
+              "system_seconds": 1.19
+            },
+            {
+              "seconds": 1.5990407759090886,
+              "peak_rss_kib": 80772,
+              "user_seconds": 0.43,
+              "system_seconds": 1.21
+            },
+            {
+              "seconds": 1.4515484550502151,
+              "peak_rss_kib": 81192,
+              "user_seconds": 0.39,
+              "system_seconds": 1.12
+            },
+            {
+              "seconds": 1.435925857978873,
+              "peak_rss_kib": 81060,
+              "user_seconds": 0.35,
+              "system_seconds": 1.13
+            }
+          ],
+          "median_seconds": 1.4595034200465307,
+          "min_seconds": 1.435925857978873,
+          "max_seconds": 1.5990407759090886,
+          "median_peak_rss_kib": 80984
+        },
+        {
+          "tool": "ncdu",
+          "threads": 1,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+            "--ignore-config",
+            "-0",
+            "--quit-after-scan",
+            "-t",
+            "1",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m"
+          ],
+          "runs": [
+            {
+              "seconds": 1.3143913419917226,
+              "peak_rss_kib": 34464,
+              "user_seconds": 0.23,
+              "system_seconds": 1.07
+            },
+            {
+              "seconds": 1.360431635985151,
+              "peak_rss_kib": 34336,
+              "user_seconds": 0.27,
+              "system_seconds": 1.07
+            },
+            {
+              "seconds": 1.4719056960893795,
+              "peak_rss_kib": 34336,
+              "user_seconds": 0.32,
+              "system_seconds": 1.14
+            },
+            {
+              "seconds": 1.3280365619575605,
+              "peak_rss_kib": 34336,
+              "user_seconds": 0.27,
+              "system_seconds": 1.04
+            },
+            {
+              "seconds": 1.3279538369970396,
+              "peak_rss_kib": 34464,
+              "user_seconds": 0.26,
+              "system_seconds": 1.06
+            }
+          ],
+          "median_seconds": 1.3280365619575605,
+          "min_seconds": 1.3143913419917226,
+          "max_seconds": 1.4719056960893795,
+          "median_peak_rss_kib": 34336
+        },
+        {
+          "tool": "rudu",
+          "threads": 4,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+            "--threads",
+            "4",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.39401890500448644,
+              "peak_rss_kib": 81728,
+              "user_seconds": 0.39,
+              "system_seconds": 1.17
+            },
+            {
+              "seconds": 0.48753041692543775,
+              "peak_rss_kib": 82128,
+              "user_seconds": 0.5,
+              "system_seconds": 1.4
+            },
+            {
+              "seconds": 0.41102269606199116,
+              "peak_rss_kib": 81704,
+              "user_seconds": 0.42,
+              "system_seconds": 1.2
+            },
+            {
+              "seconds": 0.42248768697027117,
+              "peak_rss_kib": 82160,
+              "user_seconds": 0.41,
+              "system_seconds": 1.26
+            },
+            {
+              "seconds": 0.38998344994615763,
+              "peak_rss_kib": 82176,
+              "user_seconds": 0.39,
+              "system_seconds": 1.15
+            }
+          ],
+          "median_seconds": 0.41102269606199116,
+          "min_seconds": 0.38998344994615763,
+          "max_seconds": 0.48753041692543775,
+          "median_peak_rss_kib": 82128
+        },
+        {
+          "tool": "ncdu",
+          "threads": 4,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+            "--ignore-config",
+            "-0",
+            "--quit-after-scan",
+            "-t",
+            "4",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m"
+          ],
+          "runs": [
+            {
+              "seconds": 0.3506976480130106,
+              "peak_rss_kib": 34592,
+              "user_seconds": 0.24,
+              "system_seconds": 1.12
+            },
+            {
+              "seconds": 0.36650056601502,
+              "peak_rss_kib": 34208,
+              "user_seconds": 0.29,
+              "system_seconds": 1.15
+            },
+            {
+              "seconds": 0.37768627295736223,
+              "peak_rss_kib": 34464,
+              "user_seconds": 0.27,
+              "system_seconds": 1.2
+            },
+            {
+              "seconds": 0.3598472090670839,
+              "peak_rss_kib": 34464,
+              "user_seconds": 0.28,
+              "system_seconds": 1.13
+            },
+            {
+              "seconds": 0.35215525096282363,
+              "peak_rss_kib": 34208,
+              "user_seconds": 0.29,
+              "system_seconds": 1.08
+            }
+          ],
+          "median_seconds": 0.3598472090670839,
+          "min_seconds": 0.3506976480130106,
+          "max_seconds": 0.37768627295736223,
+          "median_peak_rss_kib": 34464
+        },
+        {
+          "tool": "rudu",
+          "threads": 8,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+            "--threads",
+            "8",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.23069248895626515,
+              "peak_rss_kib": 83364,
+              "user_seconds": 0.43,
+              "system_seconds": 1.34
+            },
+            {
+              "seconds": 0.24697820097208023,
+              "peak_rss_kib": 83400,
+              "user_seconds": 0.47,
+              "system_seconds": 1.4
+            },
+            {
+              "seconds": 0.27322094002738595,
+              "peak_rss_kib": 84624,
+              "user_seconds": 0.55,
+              "system_seconds": 1.46
+            },
+            {
+              "seconds": 0.25307811005041003,
+              "peak_rss_kib": 82984,
+              "user_seconds": 0.53,
+              "system_seconds": 1.41
+            },
+            {
+              "seconds": 0.24356617603916675,
+              "peak_rss_kib": 83820,
+              "user_seconds": 0.43,
+              "system_seconds": 1.42
+            }
+          ],
+          "median_seconds": 0.24697820097208023,
+          "min_seconds": 0.23069248895626515,
+          "max_seconds": 0.27322094002738595,
+          "median_peak_rss_kib": 83400
+        },
+        {
+          "tool": "ncdu",
+          "threads": 8,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+            "--ignore-config",
+            "-0",
+            "--quit-after-scan",
+            "-t",
+            "8",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m"
+          ],
+          "runs": [
+            {
+              "seconds": 0.21539891604334116,
+              "peak_rss_kib": 34208,
+              "user_seconds": 0.36,
+              "system_seconds": 1.3
+            },
+            {
+              "seconds": 0.2099309409968555,
+              "peak_rss_kib": 34464,
+              "user_seconds": 0.36,
+              "system_seconds": 1.26
+            },
+            {
+              "seconds": 0.23793983703944832,
+              "peak_rss_kib": 34464,
+              "user_seconds": 0.41,
+              "system_seconds": 1.42
+            },
+            {
+              "seconds": 0.2108515810687095,
+              "peak_rss_kib": 34336,
+              "user_seconds": 0.38,
+              "system_seconds": 1.25
+            },
+            {
+              "seconds": 0.22054333705455065,
+              "peak_rss_kib": 33952,
+              "user_seconds": 0.41,
+              "system_seconds": 1.29
+            }
+          ],
+          "median_seconds": 0.21539891604334116,
+          "min_seconds": 0.2099309409968555,
+          "max_seconds": 0.23793983703944832,
+          "median_peak_rss_kib": 34336
+        },
+        {
+          "tool": "baseline",
+          "threads": 1,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/baseline/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+            "--threads",
+            "1",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 2.4532353369286284,
+              "peak_rss_kib": 215056,
+              "user_seconds": 0.88,
+              "system_seconds": 1.56
+            },
+            {
+              "seconds": 2.4872943960363045,
+              "peak_rss_kib": 215388,
+              "user_seconds": 0.88,
+              "system_seconds": 1.6
+            },
+            {
+              "seconds": 2.702643527998589,
+              "peak_rss_kib": 215264,
+              "user_seconds": 0.96,
+              "system_seconds": 1.73
+            },
+            {
+              "seconds": 2.4697606320260093,
+              "peak_rss_kib": 215308,
+              "user_seconds": 0.9,
+              "system_seconds": 1.56
+            },
+            {
+              "seconds": 2.439379206043668,
+              "peak_rss_kib": 215272,
+              "user_seconds": 0.84,
+              "system_seconds": 1.59
+            }
+          ],
+          "median_seconds": 2.4697606320260093,
+          "min_seconds": 2.439379206043668,
+          "max_seconds": 2.702643527998589,
+          "median_peak_rss_kib": 215272
+        },
+        {
+          "tool": "baseline",
+          "threads": 4,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/baseline/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+            "--threads",
+            "4",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 1.034885062952526,
+              "peak_rss_kib": 227060,
+              "user_seconds": 1.06,
+              "system_seconds": 1.71
+            },
+            {
+              "seconds": 1.0243783940095454,
+              "peak_rss_kib": 227104,
+              "user_seconds": 1.07,
+              "system_seconds": 1.72
+            },
+            {
+              "seconds": 1.033336492953822,
+              "peak_rss_kib": 227288,
+              "user_seconds": 1.07,
+              "system_seconds": 1.77
+            },
+            {
+              "seconds": 0.9686221920419484,
+              "peak_rss_kib": 226856,
+              "user_seconds": 0.99,
+              "system_seconds": 1.66
+            },
+            {
+              "seconds": 1.020288357976824,
+              "peak_rss_kib": 227028,
+              "user_seconds": 1.06,
+              "system_seconds": 1.78
+            }
+          ],
+          "median_seconds": 1.0243783940095454,
+          "min_seconds": 0.9686221920419484,
+          "max_seconds": 1.034885062952526,
+          "median_peak_rss_kib": 227060
+        },
+        {
+          "tool": "baseline",
+          "threads": 8,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/baseline/rudu",
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+            "--threads",
+            "8",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.8184518490452319,
+              "peak_rss_kib": 232400,
+              "user_seconds": 1.32,
+              "system_seconds": 2.08
+            },
+            {
+              "seconds": 0.8174551150295883,
+              "peak_rss_kib": 233300,
+              "user_seconds": 1.32,
+              "system_seconds": 2.13
+            },
+            {
+              "seconds": 0.8313069400610402,
+              "peak_rss_kib": 232556,
+              "user_seconds": 1.31,
+              "system_seconds": 2.22
+            },
+            {
+              "seconds": 0.8166651820065454,
+              "peak_rss_kib": 232152,
+              "user_seconds": 1.3,
+              "system_seconds": 2.09
+            },
+            {
+              "seconds": 0.816531402990222,
+              "peak_rss_kib": 232584,
+              "user_seconds": 1.29,
+              "system_seconds": 2.16
+            }
+          ],
+          "median_seconds": 0.8174551150295883,
+          "min_seconds": 0.816531402990222,
+          "max_seconds": 0.8313069400610402,
+          "median_peak_rss_kib": 232556
+        }
+      ]
+    },
+    {
+      "path": "/home/akira/ghq/github.com/akriaueno/t3code",
+      "synthetic": false,
+      "verification": {
+        "rudu": {
+          "allocated_bytes": 586092544,
+          "apparent_bytes": 542914147,
+          "entries": 17952,
+          "errors": 0
+        },
+        "reference": {
+          "allocated_bytes": 586092544,
+          "apparent_bytes": 542914147
+        }
+      },
+      "results": [
+        {
+          "tool": "rudu",
+          "threads": 1,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+            "/home/akira/ghq/github.com/akriaueno/t3code",
+            "--threads",
+            "1",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.04412253305781633,
+              "peak_rss_kib": 4304,
+              "user_seconds": 0.01,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.045129323028959334,
+              "peak_rss_kib": 4192,
+              "user_seconds": 0.01,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.04693419102113694,
+              "peak_rss_kib": 4356,
+              "user_seconds": 0.01,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.0429302389966324,
+              "peak_rss_kib": 4420,
+              "user_seconds": 0.01,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.04455291898921132,
+              "peak_rss_kib": 4288,
+              "user_seconds": 0.0,
+              "system_seconds": 0.04
+            }
+          ],
+          "median_seconds": 0.04455291898921132,
+          "min_seconds": 0.0429302389966324,
+          "max_seconds": 0.04693419102113694,
+          "median_peak_rss_kib": 4304
+        },
+        {
+          "tool": "ncdu",
+          "threads": 1,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+            "--ignore-config",
+            "-0",
+            "--quit-after-scan",
+            "-t",
+            "1",
+            "/home/akira/ghq/github.com/akriaueno/t3code"
+          ],
+          "runs": [
+            {
+              "seconds": 0.03980139398481697,
+              "peak_rss_kib": 1184,
+              "user_seconds": 0.0,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.04220884700771421,
+              "peak_rss_kib": 1184,
+              "user_seconds": 0.0,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.0400757099268958,
+              "peak_rss_kib": 1056,
+              "user_seconds": 0.0,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.041341634932905436,
+              "peak_rss_kib": 1184,
+              "user_seconds": 0.0,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.04226029594428837,
+              "peak_rss_kib": 1312,
+              "user_seconds": 0.0,
+              "system_seconds": 0.03
+            }
+          ],
+          "median_seconds": 0.041341634932905436,
+          "min_seconds": 0.03980139398481697,
+          "max_seconds": 0.04226029594428837,
+          "median_peak_rss_kib": 1184
+        },
+        {
+          "tool": "rudu",
+          "threads": 4,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+            "/home/akira/ghq/github.com/akriaueno/t3code",
+            "--threads",
+            "4",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.012216518050990999,
+              "peak_rss_kib": 4696,
+              "user_seconds": 0.01,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.012421160005033016,
+              "peak_rss_kib": 4320,
+              "user_seconds": 0.01,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.01792643906082958,
+              "peak_rss_kib": 4672,
+              "user_seconds": 0.01,
+              "system_seconds": 0.05
+            },
+            {
+              "seconds": 0.013001192011870444,
+              "peak_rss_kib": 4360,
+              "user_seconds": 0.01,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.013820803025737405,
+              "peak_rss_kib": 4740,
+              "user_seconds": 0.0,
+              "system_seconds": 0.04
+            }
+          ],
+          "median_seconds": 0.013001192011870444,
+          "min_seconds": 0.012216518050990999,
+          "max_seconds": 0.01792643906082958,
+          "median_peak_rss_kib": 4672
+        },
+        {
+          "tool": "ncdu",
+          "threads": 4,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+            "--ignore-config",
+            "-0",
+            "--quit-after-scan",
+            "-t",
+            "4",
+            "/home/akira/ghq/github.com/akriaueno/t3code"
+          ],
+          "runs": [
+            {
+              "seconds": 0.01104979298543185,
+              "peak_rss_kib": 1056,
+              "user_seconds": 0.01,
+              "system_seconds": 0.02
+            },
+            {
+              "seconds": 0.01091400207951665,
+              "peak_rss_kib": 1056,
+              "user_seconds": 0.0,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.010677319020032883,
+              "peak_rss_kib": 1056,
+              "user_seconds": 0.0,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.011058820062316954,
+              "peak_rss_kib": 1056,
+              "user_seconds": 0.01,
+              "system_seconds": 0.02
+            },
+            {
+              "seconds": 0.010885498020797968,
+              "peak_rss_kib": 1056,
+              "user_seconds": 0.0,
+              "system_seconds": 0.03
+            }
+          ],
+          "median_seconds": 0.01091400207951665,
+          "min_seconds": 0.010677319020032883,
+          "max_seconds": 0.011058820062316954,
+          "median_peak_rss_kib": 1056
+        },
+        {
+          "tool": "rudu",
+          "threads": 8,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+            "/home/akira/ghq/github.com/akriaueno/t3code",
+            "--threads",
+            "8",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.009036925970576704,
+              "peak_rss_kib": 4832,
+              "user_seconds": 0.01,
+              "system_seconds": 0.04
+            },
+            {
+              "seconds": 0.009003852028399706,
+              "peak_rss_kib": 4836,
+              "user_seconds": 0.01,
+              "system_seconds": 0.04
+            },
+            {
+              "seconds": 0.013263965956866741,
+              "peak_rss_kib": 5048,
+              "user_seconds": 0.01,
+              "system_seconds": 0.04
+            },
+            {
+              "seconds": 0.0122895980020985,
+              "peak_rss_kib": 4700,
+              "user_seconds": 0.01,
+              "system_seconds": 0.04
+            },
+            {
+              "seconds": 0.008613704005256295,
+              "peak_rss_kib": 5000,
+              "user_seconds": 0.01,
+              "system_seconds": 0.04
+            }
+          ],
+          "median_seconds": 0.009036925970576704,
+          "min_seconds": 0.008613704005256295,
+          "max_seconds": 0.013263965956866741,
+          "median_peak_rss_kib": 4836
+        },
+        {
+          "tool": "ncdu",
+          "threads": 8,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+            "--ignore-config",
+            "-0",
+            "--quit-after-scan",
+            "-t",
+            "8",
+            "/home/akira/ghq/github.com/akriaueno/t3code"
+          ],
+          "runs": [
+            {
+              "seconds": 0.007352016982622445,
+              "peak_rss_kib": 672,
+              "user_seconds": 0.0,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.007258889032527804,
+              "peak_rss_kib": 800,
+              "user_seconds": 0.01,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.014087161980569363,
+              "peak_rss_kib": 1184,
+              "user_seconds": 0.01,
+              "system_seconds": 0.04
+            },
+            {
+              "seconds": 0.007386964978650212,
+              "peak_rss_kib": 800,
+              "user_seconds": 0.0,
+              "system_seconds": 0.03
+            },
+            {
+              "seconds": 0.00744740990921855,
+              "peak_rss_kib": 800,
+              "user_seconds": 0.01,
+              "system_seconds": 0.03
+            }
+          ],
+          "median_seconds": 0.007386964978650212,
+          "min_seconds": 0.007258889032527804,
+          "max_seconds": 0.014087161980569363,
+          "median_peak_rss_kib": 800
+        },
+        {
+          "tool": "baseline",
+          "threads": 1,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/baseline/rudu",
+            "/home/akira/ghq/github.com/akriaueno/t3code",
+            "--threads",
+            "1",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.06074865092523396,
+              "peak_rss_kib": 7436,
+              "user_seconds": 0.01,
+              "system_seconds": 0.04
+            },
+            {
+              "seconds": 0.06289636599831283,
+              "peak_rss_kib": 7508,
+              "user_seconds": 0.01,
+              "system_seconds": 0.04
+            },
+            {
+              "seconds": 0.06116364698391408,
+              "peak_rss_kib": 7444,
+              "user_seconds": 0.01,
+              "system_seconds": 0.04
+            },
+            {
+              "seconds": 0.06402910698670894,
+              "peak_rss_kib": 7372,
+              "user_seconds": 0.01,
+              "system_seconds": 0.04
+            },
+            {
+              "seconds": 0.06177811301313341,
+              "peak_rss_kib": 7380,
+              "user_seconds": 0.01,
+              "system_seconds": 0.04
+            }
+          ],
+          "median_seconds": 0.06177811301313341,
+          "min_seconds": 0.06074865092523396,
+          "max_seconds": 0.06402910698670894,
+          "median_peak_rss_kib": 7436
+        },
+        {
+          "tool": "baseline",
+          "threads": 4,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/baseline/rudu",
+            "/home/akira/ghq/github.com/akriaueno/t3code",
+            "--threads",
+            "4",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.023404514999128878,
+              "peak_rss_kib": 7956,
+              "user_seconds": 0.01,
+              "system_seconds": 0.04
+            },
+            {
+              "seconds": 0.02357368904631585,
+              "peak_rss_kib": 7612,
+              "user_seconds": 0.02,
+              "system_seconds": 0.04
+            },
+            {
+              "seconds": 0.022545619984157383,
+              "peak_rss_kib": 7764,
+              "user_seconds": 0.02,
+              "system_seconds": 0.04
+            },
+            {
+              "seconds": 0.024961879942566156,
+              "peak_rss_kib": 7764,
+              "user_seconds": 0.02,
+              "system_seconds": 0.04
+            },
+            {
+              "seconds": 0.022895480040460825,
+              "peak_rss_kib": 7956,
+              "user_seconds": 0.02,
+              "system_seconds": 0.03
+            }
+          ],
+          "median_seconds": 0.023404514999128878,
+          "min_seconds": 0.022545619984157383,
+          "max_seconds": 0.024961879942566156,
+          "median_peak_rss_kib": 7764
+        },
+        {
+          "tool": "baseline",
+          "threads": 8,
+          "command": [
+            "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/baseline/rudu",
+            "/home/akira/ghq/github.com/akriaueno/t3code",
+            "--threads",
+            "8",
+            "--scan-only"
+          ],
+          "runs": [
+            {
+              "seconds": 0.018821233068592846,
+              "peak_rss_kib": 7828,
+              "user_seconds": 0.02,
+              "system_seconds": 0.05
+            },
+            {
+              "seconds": 0.019502558978274465,
+              "peak_rss_kib": 8008,
+              "user_seconds": 0.02,
+              "system_seconds": 0.05
+            },
+            {
+              "seconds": 0.01788512000348419,
+              "peak_rss_kib": 8084,
+              "user_seconds": 0.02,
+              "system_seconds": 0.05
+            },
+            {
+              "seconds": 0.018471724004484713,
+              "peak_rss_kib": 7760,
+              "user_seconds": 0.02,
+              "system_seconds": 0.05
+            },
+            {
+              "seconds": 0.01740787597373128,
+              "peak_rss_kib": 7700,
+              "user_seconds": 0.03,
+              "system_seconds": 0.04
+            }
+          ],
+          "median_seconds": 0.018471724004484713,
+          "min_seconds": 0.01740787597373128,
+          "max_seconds": 0.019502558978274465,
+          "median_peak_rss_kib": 7828
+        }
+      ]
+    }
+  ],
+  "baseline_sha256": "0e3f597039aa99695cf107085c658f89bd420b7e645f9d8f75994ebe88b0ef34",
+  "baseline_source_sha256": "835eacb7276ce75bd859cd397cb5f2a850849775566f92bbea4338d03718652d"
+}

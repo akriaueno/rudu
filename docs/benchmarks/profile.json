@@ -1,0 +1,709 @@
+{
+  "timestamp_utc": "2026-09-20T16:33:38Z",
+  "source_sha256": "835eacb7276ce75bd859cd397cb5f2a850849775566f92bbea4338d03718652d",
+  "baseline_binary_sha256": "0e3f597039aa99695cf107085c658f89bd420b7e645f9d8f75994ebe88b0ef34",
+  "script_sha256": "f64f5cf5200d9627b585050ee25341b9cc4695d69d82303c81e5275778f17ab5",
+  "dataset": "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+  "cache": "warm",
+  "runs": 5,
+  "order_seed": 20260921,
+  "perf": "unavailable: perf_event_paranoid=4; no host settings changed",
+  "results": [
+    {
+      "name": "original",
+      "threads": 1,
+      "command": [
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+        "--threads",
+        "1"
+      ],
+      "runs": [
+        {
+          "seconds": 2.5644142399542034,
+          "peak_rss_kib": 215252,
+          "user_seconds": 0.9,
+          "system_seconds": 1.65,
+          "phases": {}
+        },
+        {
+          "seconds": 2.4748532959492877,
+          "peak_rss_kib": 215212,
+          "user_seconds": 0.86,
+          "system_seconds": 1.6,
+          "phases": {}
+        },
+        {
+          "seconds": 2.483021463965997,
+          "peak_rss_kib": 215432,
+          "user_seconds": 0.88,
+          "system_seconds": 1.59,
+          "phases": {}
+        },
+        {
+          "seconds": 2.509516808902845,
+          "peak_rss_kib": 215392,
+          "user_seconds": 0.89,
+          "system_seconds": 1.6,
+          "phases": {}
+        },
+        {
+          "seconds": 2.4837516869883984,
+          "peak_rss_kib": 215236,
+          "user_seconds": 0.85,
+          "system_seconds": 1.62,
+          "phases": {}
+        }
+      ],
+      "median_seconds": 2.4837516869883984,
+      "median_peak_rss_kib": 215252,
+      "phase_medians": {}
+    },
+    {
+      "name": "original",
+      "threads": 8,
+      "command": [
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/target/release/rudu",
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+        "--threads",
+        "8"
+      ],
+      "runs": [
+        {
+          "seconds": 0.8627712900051847,
+          "peak_rss_kib": 232540,
+          "user_seconds": 1.33,
+          "system_seconds": 2.28,
+          "phases": {}
+        },
+        {
+          "seconds": 0.8153256200021133,
+          "peak_rss_kib": 232336,
+          "user_seconds": 1.36,
+          "system_seconds": 2.06,
+          "phases": {}
+        },
+        {
+          "seconds": 0.8166294520488009,
+          "peak_rss_kib": 233264,
+          "user_seconds": 1.31,
+          "system_seconds": 2.11,
+          "phases": {}
+        },
+        {
+          "seconds": 0.8118736629839987,
+          "peak_rss_kib": 232928,
+          "user_seconds": 1.3,
+          "system_seconds": 2.13,
+          "phases": {}
+        },
+        {
+          "seconds": 0.8586462970124558,
+          "peak_rss_kib": 232948,
+          "user_seconds": 1.36,
+          "system_seconds": 2.25,
+          "phases": {}
+        }
+      ],
+      "median_seconds": 0.8166294520488009,
+      "median_peak_rss_kib": 232928,
+      "phase_medians": {}
+    },
+    {
+      "name": "ncdu",
+      "threads": 1,
+      "command": [
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+        "--ignore-config",
+        "-0",
+        "--quit-after-scan",
+        "-t",
+        "1",
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m"
+      ],
+      "runs": [
+        {
+          "seconds": 1.3251929850084707,
+          "peak_rss_kib": 34336,
+          "user_seconds": 0.28,
+          "system_seconds": 1.03,
+          "phases": {}
+        },
+        {
+          "seconds": 1.3406878219684586,
+          "peak_rss_kib": 34336,
+          "user_seconds": 0.26,
+          "system_seconds": 1.06,
+          "phases": {}
+        },
+        {
+          "seconds": 1.314063288969919,
+          "peak_rss_kib": 34464,
+          "user_seconds": 0.24,
+          "system_seconds": 1.06,
+          "phases": {}
+        },
+        {
+          "seconds": 1.320640261983499,
+          "peak_rss_kib": 34592,
+          "user_seconds": 0.25,
+          "system_seconds": 1.06,
+          "phases": {}
+        },
+        {
+          "seconds": 1.3265337600605562,
+          "peak_rss_kib": 34464,
+          "user_seconds": 0.29,
+          "system_seconds": 1.02,
+          "phases": {}
+        }
+      ],
+      "median_seconds": 1.3251929850084707,
+      "median_peak_rss_kib": 34464,
+      "phase_medians": {}
+    },
+    {
+      "name": "ncdu",
+      "threads": 8,
+      "command": [
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/tools/ncdu",
+        "--ignore-config",
+        "-0",
+        "--quit-after-scan",
+        "-t",
+        "8",
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m"
+      ],
+      "runs": [
+        {
+          "seconds": 0.21967697597574443,
+          "peak_rss_kib": 34336,
+          "user_seconds": 0.36,
+          "system_seconds": 1.33,
+          "phases": {}
+        },
+        {
+          "seconds": 0.21537868108134717,
+          "peak_rss_kib": 34464,
+          "user_seconds": 0.38,
+          "system_seconds": 1.27,
+          "phases": {}
+        },
+        {
+          "seconds": 0.21586937294341624,
+          "peak_rss_kib": 34208,
+          "user_seconds": 0.33,
+          "system_seconds": 1.27,
+          "phases": {}
+        },
+        {
+          "seconds": 0.22145772096700966,
+          "peak_rss_kib": 34336,
+          "user_seconds": 0.35,
+          "system_seconds": 1.33,
+          "phases": {}
+        },
+        {
+          "seconds": 0.20865372999105603,
+          "peak_rss_kib": 34208,
+          "user_seconds": 0.39,
+          "system_seconds": 1.22,
+          "phases": {}
+        }
+      ],
+      "median_seconds": 0.21586937294341624,
+      "median_peak_rss_kib": 34336,
+      "phase_medians": {}
+    },
+    {
+      "name": "phase_baseline",
+      "threads": 1,
+      "command": [
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/profile/target/release/phase_baseline",
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+        "--threads",
+        "1"
+      ],
+      "runs": [
+        {
+          "seconds": 2.473669004975818,
+          "peak_rss_kib": 215372,
+          "user_seconds": 0.88,
+          "system_seconds": 1.58,
+          "phases": {
+            "collect": 2.090454837,
+            "sort": 0.147754025,
+            "parent_link": 0.171589006,
+            "aggregate": 0.002160123,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.049194019
+          }
+        },
+        {
+          "seconds": 2.5240784119814634,
+          "peak_rss_kib": 215396,
+          "user_seconds": 0.94,
+          "system_seconds": 1.57,
+          "phases": {
+            "collect": 2.15391005,
+            "sort": 0.141891207,
+            "parent_link": 0.169544123,
+            "aggregate": 0.002176044,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.043874745
+          }
+        },
+        {
+          "seconds": 2.487404487095773,
+          "peak_rss_kib": 215432,
+          "user_seconds": 0.87,
+          "system_seconds": 1.6,
+          "phases": {
+            "collect": 2.116890628,
+            "sort": 0.139854216,
+            "parent_link": 0.16938757,
+            "aggregate": 0.002282738,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.04437007
+          }
+        },
+        {
+          "seconds": 2.4952534419717267,
+          "peak_rss_kib": 215300,
+          "user_seconds": 0.86,
+          "system_seconds": 1.61,
+          "phases": {
+            "collect": 2.118508011,
+            "sort": 0.139934916,
+            "parent_link": 0.16700402,
+            "aggregate": 0.002068249,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.044602044
+          }
+        },
+        {
+          "seconds": 2.498644055915065,
+          "peak_rss_kib": 215256,
+          "user_seconds": 0.91,
+          "system_seconds": 1.58,
+          "phases": {
+            "collect": 2.130907088,
+            "sort": 0.139703233,
+            "parent_link": 0.169069155,
+            "aggregate": 0.002087748,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.044038303
+          }
+        }
+      ],
+      "median_seconds": 2.4952534419717267,
+      "median_peak_rss_kib": 215372,
+      "phase_medians": {
+        "collect": 2.118508011,
+        "sort": 0.139934916,
+        "parent_link": 0.16938757,
+        "aggregate": 0.002160123,
+        "node_bytes": 88.0,
+        "node_capacity": 1048576.0,
+        "drop": 0.04437007
+      }
+    },
+    {
+      "name": "phase_baseline",
+      "threads": 8,
+      "command": [
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/profile/target/release/phase_baseline",
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+        "--threads",
+        "8"
+      ],
+      "runs": [
+        {
+          "seconds": 0.8413389599882066,
+          "peak_rss_kib": 232448,
+          "user_seconds": 1.43,
+          "system_seconds": 2.08,
+          "phases": {
+            "collect": 0.413105362,
+            "sort": 0.181485691,
+            "parent_link": 0.179567168,
+            "aggregate": 0.002234095,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.049012306
+          }
+        },
+        {
+          "seconds": 0.832816299982369,
+          "peak_rss_kib": 232804,
+          "user_seconds": 1.34,
+          "system_seconds": 2.12,
+          "phases": {
+            "collect": 0.405383852,
+            "sort": 0.184120417,
+            "parent_link": 0.177843303,
+            "aggregate": 0.002059682,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.047507595
+          }
+        },
+        {
+          "seconds": 0.8310965920099989,
+          "peak_rss_kib": 233480,
+          "user_seconds": 1.32,
+          "system_seconds": 2.15,
+          "phases": {
+            "collect": 0.408892127,
+            "sort": 0.182027946,
+            "parent_link": 0.173918182,
+            "aggregate": 0.002166567,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.047677331
+          }
+        },
+        {
+          "seconds": 0.8203086650464684,
+          "peak_rss_kib": 232528,
+          "user_seconds": 1.3,
+          "system_seconds": 2.11,
+          "phases": {
+            "collect": 0.399872278,
+            "sort": 0.181813156,
+            "parent_link": 0.173784696,
+            "aggregate": 0.00205271,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.047285716
+          }
+        },
+        {
+          "seconds": 0.8520348169840872,
+          "peak_rss_kib": 231880,
+          "user_seconds": 1.36,
+          "system_seconds": 2.16,
+          "phases": {
+            "collect": 0.445129443,
+            "sort": 0.170181688,
+            "parent_link": 0.172863981,
+            "aggregate": 0.002116823,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.045967535
+          }
+        }
+      ],
+      "median_seconds": 0.832816299982369,
+      "median_peak_rss_kib": 232528,
+      "phase_medians": {
+        "collect": 0.408892127,
+        "sort": 0.181813156,
+        "parent_link": 0.173918182,
+        "aggregate": 0.002116823,
+        "node_bytes": 88.0,
+        "node_capacity": 1048576.0,
+        "drop": 0.047507595
+      }
+    },
+    {
+      "name": "worker_local",
+      "threads": 8,
+      "command": [
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/profile/target/release/worker_local",
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+        "--threads",
+        "8"
+      ],
+      "runs": [
+        {
+          "seconds": 0.766568191931583,
+          "peak_rss_kib": 245612,
+          "user_seconds": 1.07,
+          "system_seconds": 1.89,
+          "phases": {
+            "collect": 0.35986387,
+            "sort": 0.158140091,
+            "parent_link": 0.176157957,
+            "aggregate": 0.002149093,
+            "node_bytes": 88.0,
+            "node_capacity": 1990520.0,
+            "drop": 0.046748885
+          }
+        },
+        {
+          "seconds": 0.7503534220159054,
+          "peak_rss_kib": 245384,
+          "user_seconds": 1.08,
+          "system_seconds": 1.89,
+          "phases": {
+            "collect": 0.359119978,
+            "sort": 0.155078375,
+            "parent_link": 0.173785382,
+            "aggregate": 0.002038452,
+            "node_bytes": 88.0,
+            "node_capacity": 1129152.0,
+            "drop": 0.046747832
+          }
+        },
+        {
+          "seconds": 0.7645156159996986,
+          "peak_rss_kib": 246380,
+          "user_seconds": 1.12,
+          "system_seconds": 1.89,
+          "phases": {
+            "collect": 0.365789149,
+            "sort": 0.157600684,
+            "parent_link": 0.176684344,
+            "aggregate": 0.002075954,
+            "node_bytes": 88.0,
+            "node_capacity": 1052776.0,
+            "drop": 0.046584442
+          }
+        },
+        {
+          "seconds": 0.7653261489467695,
+          "peak_rss_kib": 245936,
+          "user_seconds": 1.08,
+          "system_seconds": 1.93,
+          "phases": {
+            "collect": 0.36504185,
+            "sort": 0.159074102,
+            "parent_link": 0.175918327,
+            "aggregate": 0.002081164,
+            "node_bytes": 88.0,
+            "node_capacity": 1777808.0,
+            "drop": 0.047597961
+          }
+        },
+        {
+          "seconds": 0.782180838054046,
+          "peak_rss_kib": 245416,
+          "user_seconds": 1.06,
+          "system_seconds": 1.99,
+          "phases": {
+            "collect": 0.370833833,
+            "sort": 0.166015203,
+            "parent_link": 0.17694667,
+            "aggregate": 0.002132382,
+            "node_bytes": 88.0,
+            "node_capacity": 1844904.0,
+            "drop": 0.04827532
+          }
+        }
+      ],
+      "median_seconds": 0.7653261489467695,
+      "median_peak_rss_kib": 245612,
+      "phase_medians": {
+        "collect": 0.36504185,
+        "sort": 0.158140091,
+        "parent_link": 0.176157957,
+        "aggregate": 0.002081164,
+        "node_bytes": 88.0,
+        "node_capacity": 1777808.0,
+        "drop": 0.046748885
+      }
+    },
+    {
+      "name": "relative_paths",
+      "threads": 8,
+      "command": [
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/profile/target/release/relative_paths",
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+        "--threads",
+        "8"
+      ],
+      "runs": [
+        {
+          "seconds": 0.7487225549994037,
+          "peak_rss_kib": 123948,
+          "user_seconds": 1.56,
+          "system_seconds": 2.17,
+          "phases": {
+            "collect": 0.473043322,
+            "sort": 0.14838918,
+            "parent_link": 0.088359583,
+            "aggregate": 0.002374953,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.029059095
+          }
+        },
+        {
+          "seconds": 0.6792871759971604,
+          "peak_rss_kib": 124272,
+          "user_seconds": 1.45,
+          "system_seconds": 2.07,
+          "phases": {
+            "collect": 0.434331211,
+            "sort": 0.127669789,
+            "parent_link": 0.082808112,
+            "aggregate": 0.002343665,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.02748907
+          }
+        },
+        {
+          "seconds": 0.681358608067967,
+          "peak_rss_kib": 124156,
+          "user_seconds": 1.4,
+          "system_seconds": 2.11,
+          "phases": {
+            "collect": 0.434884391,
+            "sort": 0.127162674,
+            "parent_link": 0.082970567,
+            "aggregate": 0.002176185,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.026959895
+          }
+        },
+        {
+          "seconds": 0.7038557239575312,
+          "peak_rss_kib": 124036,
+          "user_seconds": 1.44,
+          "system_seconds": 2.17,
+          "phases": {
+            "collect": 0.449262741,
+            "sort": 0.133905456,
+            "parent_link": 0.083645691,
+            "aggregate": 0.002299231,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.027350389
+          }
+        },
+        {
+          "seconds": 0.708301950013265,
+          "peak_rss_kib": 124476,
+          "user_seconds": 1.48,
+          "system_seconds": 2.16,
+          "phases": {
+            "collect": 0.456422669,
+            "sort": 0.129864787,
+            "parent_link": 0.082360106,
+            "aggregate": 0.002294712,
+            "node_bytes": 88.0,
+            "node_capacity": 1048576.0,
+            "drop": 0.029999911
+          }
+        }
+      ],
+      "median_seconds": 0.7038557239575312,
+      "median_peak_rss_kib": 124156,
+      "phase_medians": {
+        "collect": 0.449262741,
+        "sort": 0.129864787,
+        "parent_link": 0.082970567,
+        "aggregate": 0.002299231,
+        "node_bytes": 88.0,
+        "node_capacity": 1048576.0,
+        "drop": 0.02748907
+      }
+    },
+    {
+      "name": "local_relative",
+      "threads": 8,
+      "command": [
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/profile/target/release/local_relative",
+        "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+        "--threads",
+        "8"
+      ],
+      "runs": [
+        {
+          "seconds": 0.666986329946667,
+          "peak_rss_kib": 136224,
+          "user_seconds": 1.26,
+          "system_seconds": 2.0,
+          "phases": {
+            "collect": 0.416621807,
+            "sort": 0.131354795,
+            "parent_link": 0.081714141,
+            "aggregate": 0.002290203,
+            "node_bytes": 88.0,
+            "node_capacity": 1130008.0,
+            "drop": 0.027480811
+          }
+        },
+        {
+          "seconds": 0.6482673200080171,
+          "peak_rss_kib": 136780,
+          "user_seconds": 1.23,
+          "system_seconds": 1.92,
+          "phases": {
+            "collect": 0.400019993,
+            "sort": 0.125931651,
+            "parent_link": 0.084568813,
+            "aggregate": 0.002429869,
+            "node_bytes": 88.0,
+            "node_capacity": 1011460.0,
+            "drop": 0.027604791
+          }
+        },
+        {
+          "seconds": 0.6420678859576583,
+          "peak_rss_kib": 136900,
+          "user_seconds": 1.26,
+          "system_seconds": 1.88,
+          "phases": {
+            "collect": 0.40025237,
+            "sort": 0.120644756,
+            "parent_link": 0.082218122,
+            "aggregate": 0.00235112,
+            "node_bytes": 88.0,
+            "node_capacity": 1034604.0,
+            "drop": 0.028979966
+          }
+        },
+        {
+          "seconds": 0.6370260500116274,
+          "peak_rss_kib": 137248,
+          "user_seconds": 1.18,
+          "system_seconds": 1.89,
+          "phases": {
+            "collect": 0.391454868,
+            "sort": 0.123508521,
+            "parent_link": 0.083209607,
+            "aggregate": 0.002379444,
+            "node_bytes": 88.0,
+            "node_capacity": 1993624.0,
+            "drop": 0.029368492
+          }
+        },
+        {
+          "seconds": 0.7103708210634068,
+          "peak_rss_kib": 136148,
+          "user_seconds": 1.32,
+          "system_seconds": 2.13,
+          "phases": {
+            "collect": 0.450183581,
+            "sort": 0.139588202,
+            "parent_link": 0.082809481,
+            "aggregate": 0.002364285,
+            "node_bytes": 88.0,
+            "node_capacity": 1954176.0,
+            "drop": 0.027952009
+          }
+        }
+      ],
+      "median_seconds": 0.6482673200080171,
+      "median_peak_rss_kib": 136780,
+      "phase_medians": {
+        "collect": 0.40025237,
+        "sort": 0.125931651,
+        "parent_link": 0.082809481,
+        "aggregate": 0.002364285,
+        "node_bytes": 88.0,
+        "node_capacity": 1130008.0,
+        "drop": 0.027952009
+      }
+    }
+  ]
+}

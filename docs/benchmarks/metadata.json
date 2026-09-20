@@ -1,0 +1,63 @@
+{
+  "dataset": "/home/akira/.t3/worktrees/rudu/t3code-e0aa41a2/.bench/data/spread-1m",
+  "cache": "warm",
+  "scope": "enumeration and file metadata only; no stored tree, directory sizes, sorting, or hard-link accounting",
+  "source_sha256": "8227605bf1a849eeddf5a1d6d49420340b8ff03227f88d6481128fb2ec70ed49",
+  "binary_sha256": "a27cf13726cefe7d50a02c62e270577e93e036f352ea51bc1b7556a08793d90e",
+  "order_seed": 20260921,
+  "totals": [
+    1000000,
+    128000000,
+    4096000000
+  ],
+  "results": [
+    {
+      "mode": "full",
+      "threads": 1,
+      "seconds": [
+        1.8238192450000001,
+        1.826123141,
+        1.807695003,
+        1.796751622,
+        1.802884299
+      ],
+      "median_seconds": 1.807695003
+    },
+    {
+      "mode": "full",
+      "threads": 8,
+      "seconds": [
+        0.308112729,
+        0.295885311,
+        0.304855978,
+        0.309579181,
+        0.308008582
+      ],
+      "median_seconds": 0.308008582
+    },
+    {
+      "mode": "entry",
+      "threads": 1,
+      "seconds": [
+        1.320680182,
+        1.353466415,
+        1.308978942,
+        1.34607278,
+        1.338395299
+      ],
+      "median_seconds": 1.338395299
+    },
+    {
+      "mode": "entry",
+      "threads": 8,
+      "seconds": [
+        0.22052941,
+        0.240311501,
+        0.216474447,
+        0.221316556,
+        0.219625893
+      ],
+      "median_seconds": 0.22052941
+    }
+  ]
+}
